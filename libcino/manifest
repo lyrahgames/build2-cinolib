@@ -1,0 +1,21 @@
+: 1
+name: libcino
+version: 0.0.1
+type: lib
+language: c++
+project: cinolib
+summary: C++ library for processing polygonal and polyhedral meshes
+license: MIT
+
+description-file: README.md
+url: https://github.com/mlivesu/cinolib
+email: marco.livesu@gmail.com
+
+package-description-file: PACKAGE-README.md
+package-url: https://github.com/build2-packaging/cinolib
+package-email: packaging@build2.org
+
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
+
+depends: Eigen ^3.4.0

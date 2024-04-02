@@ -1,0 +1,34 @@
+libs = # Interface dependencies.
+import libs += Eigen%lib{Eigen}
+
+lib{cino}: {hxx ixx}{**} $libs
+
+# Build options.
+#
+# cxx.poptions =+ "-I$src_root"
+
+# Export options.
+#
+lib{cino}:
+{
+  cxx.export.poptions = "-I$src_root"
+  cxx.export.libs = $libs
+}
+
+# For pre-releases use the complete version to make sure they cannot
+# be used in place of another pre-release or the final version. See
+# the version module for details on the version.* variable values.
+#
+# if $version.pre_release
+#   lib{cino}: bin.lib.version = "-$version.project_id"
+# else
+#   lib{cino}: bin.lib.version = "-$version.major.$version.minor"
+
+# Install into the libcino/ subdirectory of, say, /usr/include/
+# recreating subdirectories.
+#
+{hxx ixx}{*}:
+{
+  install         = include/cinolib/
+  install.subdirs = true
+}

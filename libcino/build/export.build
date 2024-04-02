@@ -1,0 +1,6 @@
+$out_root/
+{
+  include cinolib/
+}
+
+export $out_root/cinolib/$import.target
